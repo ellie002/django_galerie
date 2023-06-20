@@ -22,6 +22,7 @@ class Obrazy(models.Model):
     popis = models.TextField(max_length=4000, blank=True, null=True, help_text="Zadejte popis obrazu")
     autor = models.ForeignKey("Autori", on_delete=models.CASCADE, verbose_name="Jméno autora", help_text="Zadejte jméno autora")
     mistnost = models.ForeignKey("Mistnosti", on_delete=models.CASCADE, verbose_name="Číslo místnosti", help_text="Zadejte číslo místnosti")
+    fotka = models.ImageField(upload_to="obrazy", null=True, blank=True, verbose_name='Fotka', help_text='Přidejte fotku')
 
     class Meta:
         ordering =['nazev']
@@ -41,6 +42,7 @@ class Autori(models.Model):
     rok_umrti = models.IntegerField(verbose_name="Rok úmrtí autora", help_text="Zadejte rok úmrtí autora", 
                                     validators=[MinValueValidator(0, message='Hodnota musí být větší nebo rovna 0.'),
                                                 MaxValueValidator(2023, message='Hodnota musí být menší nebo rovna 2023.')])
+    fotka = models.ImageField(upload_to="vystavy", null=True, blank=True, verbose_name='Fotka', help_text='Přidejte fotku')
     
     class Meta:
         ordering =['jmeno']

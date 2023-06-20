@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}List výstav{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h2 class="text-center p-2">List výstav</h2>
+</div>
+    {% for vystava in vystavy %}
+        <div class="row container-fluid mb-2">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-4">
+                <h4>{{vystava.nazev}}</h4>
+            </div>
+            <div class="col-sm-1 my-auto">
+                <a href="{% url 'vystava' vystava.pk %}" type="button" class="btn btn-primary">Více ></a>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+        <hr>
+    {% endfor %}
+    <div class="m-5"></div>
+</div>
+{% endblock %}

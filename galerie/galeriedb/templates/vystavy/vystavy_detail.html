@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Detail výstavy{%  endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h2 class="text-center p-2">{{vystava.nazev}}</h2>
+</div>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        {{vystava.popis}}
+    </div>
+    <div class="col-sm-2">
+    </div>
+</div>
+   
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Detail autora{%  endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center mt-5">
+    <div class="card bg-dark text-white">
+        <h2 class="card-header text-center">{{autor.jmeno}} {{autor.prijmeni}}</h2>
+        <img class="card-img-top" src="{{autor.fotka.url}}" alt="{{autor.jmeno}} {{autor.prijmeni}}">
+        <div class="card-body">
+          <p class="card-text">Rok narození: {{autor.rok_narozeni}}</p>
+          <p class="card-text">Rok úmrtí: {{autor.rok_umrti}}</p>
+        </div>
+      </div>
+</div>
+<div class="mb-5"></div>
+
+
+   
+{% endblock %}

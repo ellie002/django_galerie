@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title%} {% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h2 class="text-center p-2">{{obraz.nazev}}</h2>
+</div>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-6">
+        {{obraz.popis}}
+    </div>
+    <div class="col-sm-2">
+        <div class="card bg-dark">
+            <div class="card-header text-white text-center">
+                {{obraz.nazev}}
+              </div>
+            <img class="card-img-top" src="{{obraz.fotka.url}}" alt="{{obraz.nazev}}">
+            <div class="card-body text-white">
+                <p class="card-text">Autor: <strong>{{obraz.autor.jmeno}} {{obraz.autor.prijmeni}}</strong></p>
+            </div>
+          </div>
+        <div class="mb-5"></div>
+    </div>
+</div>
+   
+{% endblock %}

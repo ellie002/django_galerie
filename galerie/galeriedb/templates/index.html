@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Galeriedb{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <h2 class="text-center p-2">Autoři</h2>
+</div>
+<div class="row">
+  <div class="col-sm-3"></div>
+    {% for autor in autori %}
+    <div class="col-sm-2">
+        <div class="card">
+            <div class="card-header">{{autor.jmeno}} {{autor.prijmeni}}</div>
+            <img class="card-img-top" src="{{ autor.fotka.url }}" alt="{{autor.jmeno}} {{autor.prijmeni}}">
+            <div class="card-body">
+              <a href="{% url 'autor' autor.pk %}" class="btn btn-primary">Více informací></a>
+            </div>
+          </div>
+    </div>
+    {% endfor %}
+    <div class="m-5"></div>
+</div>
+<div class="container-fluid">
+  <h2 class="text-center p-2">Obrazy</h2>
+</div>
+
+<div class="row">
+  <div class="col-sm-3"></div>
+  {% for obraz in obrazy %}
+  <div class="col-sm-2">
+      <div class="card">
+          <div class="card-header">{{obraz.nazev}}</div>
+          <img class="card-img-top" src="{{ obraz.fotka.url }}" alt="{{obraz.nazev}}">
+          <div class="card-body">
+            <a href="{% url 'obraz' obraz.pk %}" class="btn btn-primary">Více informací></a>
+          </div>
+        </div>
+  </div>
+  {% endfor %}
+  <div class="m-5"></div>
+</div>
+{% endblock %}
